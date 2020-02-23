@@ -5,8 +5,18 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
-    "test": "cross-env DB_ENV=testing jest -- watch"
+    "test": "jest --watchALL --verbose"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "functions": 100
+      }
+    }
+  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LambdaSchool/Sprint-Challenge-Authentication.git"
@@ -35,14 +45,5 @@
   "devDependencies": {
     "nodemon": "^2.0.2",
     "supertest": "^4.0.2"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverage": true,
-    "coverageThreshold": {
-      "global": {
-        "functions": 100
-      }
-    }
   }
 }

@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
         res.status(401).json
         ({
           success: false,
-          errorMessage: "why are you here? You know you don't belong here. Go home."
+          errorMessage: "AuthMW: You know you don't belong here. Go home."
         });
       } else {
         req.user = {password:decodedToken.password};
@@ -23,7 +23,7 @@ module.exports = (req, res, next) => {
     res.status(401).json
     ({
       success: false, 
-      errorMessage: 'too bad so sad'
+      errorMessage: 'AuthMW: too bad so sad'
     })
   };
  
